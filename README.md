@@ -24,45 +24,9 @@ To build and deploy your application for the first time, run the following in yo
 
 ```bash
 sam build
-sam deploy --guided
+sam deploy
 ```
 
 The first command will build a docker image from a Dockerfile and then copy the source of your application inside the Docker image. The second command will package and deploy your application to AWS, with a series of prompts:
 
 You can find your API Gateway Endpoint URL in the output values displayed after deployment.
-
-## Use the SAM CLI to build and test locally
-
-Build your application with the `sam build` command.
-
-```bash
-lambda-python3.9$ sam build
-```
-
-The SAM CLI builds a docker image from a Dockerfile and then installs dependencies defined in `webhook-shell/requirements.txt` inside the docker image. The processed template file is saved in the `.aws-sam/build` folder.
-
-Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
-
-Run functions locally and invoke them with the `sam local invoke` command.
-
-```bash
-lambda-python3.9$ sam local invoke WebHookFunction 
-```
-
-The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
-
-```bash
-lambda-python3.9$ sam local start-api
-lambda-python3.9$ curl http://localhost:3000/
-```
-
-The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
-
-```yaml
-      Events:
-        WebHook:
-          Type: Api
-          Properties:
-            Path: /hello
-            Method: get
-```
