@@ -1,0 +1,4 @@
+openai
+requests
+debugpy>=1.0,<2
+pytoml
