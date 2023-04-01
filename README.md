@@ -3,6 +3,7 @@
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - .vscode/launcg.json for local sam invoke
+- s3 - gitleaks.toml file that contains list of regex to remove secrets from the http request body - This file is copied from gitleaks repo (https://github.com/gitleaks/gitleaks)
 - lambda - Code for the application's Lambda function and Project Dockerfile.
 - template.yaml - A template that defines the application's AWS resources.
 
