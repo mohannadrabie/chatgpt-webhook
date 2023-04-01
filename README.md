@@ -9,6 +9,12 @@ This project contains source code and supporting files for a serverless applicat
 
 The application uses Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code. Please note that lambda IAM policies are not defined as part of this template.
 
+## Upload gitleaks.toml to S3
+Upload gitleaks.toml file into S3 bucket [Bucket Name: "chatgpt-webhook"]
+
+## Store openapi token in AWS Secret Manager
+Add openapi token key to Secret Manager [Secret Name: "openai-key"]
+
 ## Deploy the sample application
 
 The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda. It can also emulate your application's build environment and API.
