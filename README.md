@@ -12,7 +12,7 @@ The application uses Lambda functions and an API Gateway API. These resources ar
 ## Upload gitleaks.toml to S3
 Upload gitleaks.toml file into S3 bucket [Bucket Name: "chatgpt-webhook"]
 
-## Store openapi token in AWS Secret Manager
+## Store Openai token in AWS Secret Manager
 Add openapi token key to Secret Manager [Secret Name: "openai-key"]
 
 ## Deploy the sample application
@@ -37,3 +37,5 @@ sam deploy
 The first command will build a docker image from a Dockerfile and then copy the source of your application inside the Docker image. The second command will package and deploy your application to AWS, with a series of prompts:
 
 You can find your API Gateway Endpoint URL in the output values displayed after deployment.
+
+
